@@ -1,2 +1,77 @@
-<h1>Chocolate#index</h1>
-<p>Find me in app/views/chocolate/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CHOCOLATE</title>
+
+  </head>
+  <body>
+    <p id='notice'> <%= notice %> </p>
+
+    <div class="jumbotron" style="background-color:#df5b6e" >
+      <div class="container text-center" >
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMpKM8laxSu6c06Dpu-5VBcy-OEucSNbMx5w&usqp=CAU" alt="">
+        <h1>CHOCOLATE</h1>
+        <p>This is a Big Big Welcome </p>
+      </div>
+    </div>
+  </body>
+
+
+
+  <div class="row">
+    <% cache @products do %>
+      <% @products.each do |product| %>
+          <% cache product do %>
+            <% if product.selection == "chocolate"  %>
+
+                    <div class="col-sm-4">
+                      <div class="parnel panel-primary">
+                        <%= image_tag(product.image_url, width: 150, height: 150)  %>
+                        <h3><%= product.title %></h3>
+                        <%= sanitize(product.description) %>
+                        <div class="price_line" >
+                          <span class="price"><%= number_to_currency(product.price) %></span>
+                          <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+                        </div>
+                      </div>
+                    </div>
+            <% end %>
+         <% end %>
+     <% end %>
+  <% end %>
+  </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-danger">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-success">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+
+
+
+
+
+</html>

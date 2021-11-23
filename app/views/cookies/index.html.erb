@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cookies</title>
+
+  </head>
+  <body>
+    <p id='notice'> <%= notice %> </p>
+
+    <div class="jumbotron" style="background-color:#df5b6e" >
+      <div class="container text-center" >
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaYfO4IvCuGRu5wRjdoA6Rt71wo_5XT8f80w&usqp=CAU" alt="">
+        <h1>COOKIES</h1>
+        <p>This is a Big Big Welcome </p>
+      </div>
+    </div>
+
+    <div class="">
+      <% cache @products do %>
+        <% @products.each do |product| %>
+            <% cache product do %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="parnel panel-primary">
+          <div class="pannel-heading">BLACK FRIDAY DEAL</div>
+        <%= image_tag(product.image_url, width: 150, height: 150)  %>
+          <h3><%= product.title %></h3>
+          <%= sanitize(product.description) %>
+          <div class="price_line">
+            <span class="price"><%= number_to_currency(product.price) %></span>
+            <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+          </div>
+          <div class="pannel-footer">BUY 50 CANDIES AND GET A GIFT CARD</div>
+        </div>
+      </div>
+      <% end %>
+     <% end %>
+   <% end %>
+  </div>
+  </div>
+    </div>
+  </body>
+</html>

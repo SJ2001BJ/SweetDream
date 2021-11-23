@@ -52,7 +52,7 @@ class CartsController < ApplicationController
     @cart.destroy if @cart.id == session[:cart_id]
     session[:cart_id] = nil
     respond_to do |format|
-      format.html { redirect_to store_index_url, notice: "Your cart is currently empty." }
+      format.html { redirect_to store_index_url, notice: 'Your cart is currently empty.' }
       format.json { head :no_content }
     end
   end
@@ -65,7 +65,7 @@ class CartsController < ApplicationController
 
     def invalid_cart
       logger.error "Attempt to access invalid cart #{params[:id]}"
-      redirect_to store_index_url, notice: 'invalid Cart'
+      redirect_to store_index_url, notice: 'Invalid Cart'
     end
     # Only allow a list of trusted parameters through.
     def cart_params

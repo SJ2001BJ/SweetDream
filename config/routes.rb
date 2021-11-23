@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'cookies/index'
+  get 'cakes/index'
   get 'chocolate/index'
   resources :line_items
   resources :carts
