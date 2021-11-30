@@ -1,0 +1,31 @@
+
+	.header,.product_list,.delivered{
+		text-align: center;
+	}
+	.product_title{
+		font-weight: bold;
+		color: red;
+	}
+	.contact_input{
+		color:#005aa7;
+
+		border:0px;
+
+		border-bottom:1px solid grey; /* 下划线效果 */
+
+		background-color:transparent;
+	}
+	.contact1{
+		height: 55px;
+		font-size: 16px;
+		float: left;
+	}
+	.contact{
+		height: 55px;
+		font-size: 16px;
+		float: left;
+		margin-left: 80px;
+	}
+.product_list{
+  background-image: url(orderback.jpg);
+}

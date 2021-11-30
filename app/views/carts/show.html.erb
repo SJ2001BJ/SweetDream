@@ -1,21 +1,32 @@
 <p id="notice"><%= notice %></p>
 <h2> Your Candy Cart</h2>
-<table>
+<table style="font-weight:bold;">
   <% @cart.line_items.each do |item|%>
-     <tr>
-       <td><%= item.quantity %> &times;</td>
+     <tr style="border-bottom:1px solid #BBB;height: 30px;">
+       <td>&nbsp;<%= item.quantity %> &times;</td>
        <td><%= item.product.title %></td>
         <td class='item_price'><%= number_to_currency(item.total_price) %> </td>
+        <td style="padding-left: 15px;color:red"><a href="http://localhost:3000/carts/delete_one_pro?item_id=<%= item.id %>&cart_id=<%=item.cart_id%>">delete</a></td>
      </tr>
     <% end %>
 
 
-  <tr class="total_line">
+  <tr class="total_line" style="height: 30px;">
     <td colspan="2">Total</td>
     <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-
+  </tr>
+  <tr>
+    <td>
+      <%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' },style:"float:left;background-color:grey; color:white;width: 95px; height: 39px;border:0;font-size: 16px; box-sizing: content-box;border-radius: 5px;" %>
+    </td>
+    <td>
+      <button style="float:right;background-color:#f66f6a; color:white;width: 65px; height: 39px;border:0;font-size: 16px; box-sizing: content-box;border-radius: 5px;">
+        <a href="/carts/order_info?cart_ids=<%= @cart.line_items.pluck("id").join("||") %>">Pay</a>
+      </button>
+      
+    </td>
   </tr>
 </table>
 
 
-<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+

@@ -1,17 +1,49 @@
 // Place all the styles related to the Store controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-p,div.price_line {
-  margin-left: 100px;
-  margin-top: 0.5em;
-  margin-bottom: 0.8em;
-
-  form, div{
-    display: inline;
-  }
+.products{
+  border-style: outset;
+  border-color: #eec6cb;
+  padding-left: 107px;
 
 }
 
-.jumbotron {
- margin-bottom: 0;
+.image {
+  width: 300px;
+  border :25px ;
+  border-radius: 25px;
+  text-align: center;
+
+}
+
+.title{
+  background-color: FF5733;
+  width: 300px;
+  border :25px ;
+  border-radius: 25px;
+  text-align: center;
+
+}
+
+.description {
+  width: 300px;
+  border :25px ;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.shopping{
+  width: 300px;
+  border :25px ;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.form label, .form input {
+  display: block;
+  margin: 10px;
+
+}
+.word  {
+  text-shadow: 5px 5px 5px #FF0000;
 }

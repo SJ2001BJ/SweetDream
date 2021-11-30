@@ -31,3 +31,25 @@
 
 en:
   hello: "Hello world"
+
+  carts:
+    edit:
+      link_to: Show
+      link_to: Back
+
+
+
+  store:
+    contact:
+      title: Contact Us
+      contact_us:  Complete the following form to get in touch with us
+
+      name: "Name:"
+      enter_name: Enter your name
+      email: "Email:"
+      enter_email: Enter your email address
+      telephone: "Telephone:"
+      enter_telephone: Enter your telephone number
+      message: "Message:"
+      enter_message: What do you want to say?
+      submit: Contact Us

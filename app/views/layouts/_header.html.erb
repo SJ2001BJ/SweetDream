@@ -14,10 +14,12 @@
         <li><a href="http://localhost:3000/chocolate/index#">Chocolate</a></li>
         <li><a href="http://localhost:3000/cakes/index#">Cakes</a></li>
         <li><a href="http://localhost:3000/cookies/index#">Cookies</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="http://localhost:3000/contact">Contact</a></li>
+        <li><a href="http://localhost:3000/products">add products(only admin)</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li><a href="http://localhost:3000/orders/index#"><span class="glyphicon glyphicon-user"></span> <%= current_user.email rescue ""%></a></li>
+        <li><%= link_to('logout', destroy_user_session_path, :method => :delete,:class => "glyphicon") %></li>
         <li>
           <a href="http://localhost:3000/carts" >
              <span class="glyphicon glyphicon-shopping-cart" ></span>

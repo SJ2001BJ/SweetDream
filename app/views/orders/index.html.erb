@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="order" href="http://localhost:3000/orders/index#">
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1>order list</h1>
+			</div>
+			<hr>
+			<div class="product_list">
+
+				<hr>
+				<div class="list">
+					<ul style="text-align: left;list-style:none;margin: 0;padding: 0;display: inline;font-size: 16px;">
+						<% @orders.each do |order| %>
+							<h2>product lists(<%= order.created_at %>)</h2>
+							<% order.order_items.each do |item| %>
+								<li style="margin: 0;padding: 0;height: 40px;">Title:<label class="product_title"><%= item.title %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									Count:<label class="product_title"><%= item.count %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									Price:<label class="product_title"><%= number_to_currency(item.price) %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</li>
+							<% end %>
+							<div>
+								<h3>delivered information</h3>
+								<li style="margin: 0;padding: 0;height: 40px;">Name:<label class="product_title"><%= order.name %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										Phone:<label class="product_title"><%= order.phone %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										Address:<label class="product_title"><%= order.address %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</li>
+							</div>
+							<hr style="color:#FFFFFF"><hr style="color:#FFFFFF">
+						<% end %>
+
+					</ul>
+				</div>
+			</div>
+			<hr>
+			<hr>
+		</div>
+	</body>
+</html>

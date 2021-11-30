@@ -1,6 +1,35 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
+
+  #before_action :require_login
+  #before_action :current_user, only: [:create, :destroy]
+#  before_action :correct_user, only: :destroy
+#  before_action :authenticate_admin, only: :products_url
+
+  #private
+  #  def correct_user
+    #   redirect_to(store_index) if current_user.nill? && !current_user.admin?
+    #end
+
+    #def admin_user
+    #   redirect_to(products_url) unless current_user.admin?
+
+  #  end
+
+  add_flash_types :error, :info, :warning, :success
+
+  before_action :ensure_admin_user!
+
+  def ensure_admin_user!
+    unless current_user and current_user.admin?
+      redirect_to products_url, error: "You don't belong there ...sorrey , maybe you can join us ?..hahah"
+    end
+  end
+
+
+
+
   # GET /products or /products.json
   def index
     @products = Product.all

@@ -6,38 +6,62 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  </head>
+    </head>
   <body>
     <div class="jumbotron" style="background-color:#df5b6e" >
       <div class="container text-center" >
         <img src="assets/storelogo.png" alt="">
         <h1 >Sweet Dream</h1>
-        <p>This is a Big Big Welcome </p>
+        <div class="word">This is a Big Big Welcome </div>
       </div>
     </div>
 
-    <% cache @products do %>
-      <% @products.each do |product| %>
-          <% cache product do %>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="parnel panel-primary">
-        <div class="pannel-heading">BLACK FRIDAY DEAL</div>
-      <%= image_tag(product.image_url, width: 150, height: 150)  %>
-        <h3><%= product.title %></h3>
-        <%= sanitize(product.description) %>
-        <div class="price_line">
-          <span class="price"><%= number_to_currency(product.price) %></span>
-          <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
-        </div>
-        <div class="pannel-footer">BUY 50 CANDIES AND GET A GIFT CARD</div>
+   
+    <div class="row">
+      <div class="">
+        <% cache @products do %>
+          <% @products.each do |product| %>
+              <% cache product do %>
+
+
+                        <div class="col-sm-4">
+                          <div class="products" >
+
+
+                            <div class="image">
+                              <%= image_tag(product.image_url, width: 200, height: 200)  %>
+                            </div>
+
+
+                            <div class="title">
+                                <%= product.title %>
+                            </div>
+
+
+                             <div class="description">
+                               <%= sanitize(product.description) %>
+                             </div>
+
+
+
+                            <div class="shopping">
+                              <div class="price" ><%= number_to_currency(product.price) %></div>
+                              <div class="Cart">
+                                <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+                              </div>
+                            </div>
+
+
+
+
+                          </div>
+                        </div>
+                <% end %>
+             <% end %>
+         <% end %>
+
       </div>
+
     </div>
-    <% end %>
-   <% end %>
- <% end %>
-</div>
-</div>
 </body>
 </html>

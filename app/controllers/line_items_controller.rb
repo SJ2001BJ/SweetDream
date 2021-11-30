@@ -23,12 +23,14 @@ class LineItemsController < ApplicationController
 
   # POST /line_items or /line_items.json
   def create
+    Rails.logger.info "-------create"
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product)
-
+    @cart.user_id = current_user.id
+    Rails.logger.info "-------#{@cart.to_json}"
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart }
+        format.html { redirect_to "/" }
 
         format.json { render :show, status: :created, location: @line_item }
       else
