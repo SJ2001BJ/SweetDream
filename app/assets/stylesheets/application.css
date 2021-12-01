@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
  body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 
   #notice: empty {
@@ -57,7 +58,3 @@
        }
        }
        }
-
-
-
-  

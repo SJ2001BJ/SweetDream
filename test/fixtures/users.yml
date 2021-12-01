@@ -5,15 +5,13 @@
 # below each fixture, per the syntax in the comments below
 #
 admin_user:
-  name: Shi Jun
   email: 1773780642@126.com
-  password_digest: MyString
-  role: 'admin'
+  #password: 111111
+  admin: true
 # column: value
 #
 regular_user:
-  name: Normal User
   email: normal@gmail.com
-  password_digest: MyString
-  role: 'user'
+  #password: MyString
+  admin: false
 # column: value
