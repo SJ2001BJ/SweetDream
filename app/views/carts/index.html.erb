@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<h2> Your Candy Cart</h2>
+<h2 class="candyt"> Your Candy Cart</h2>
 <table style="font-weight:bold;">
   <% if !@cart.nil? %>
     <% @cart.line_items.each do |item|%>
@@ -25,10 +25,7 @@
       <button style="float:right;background-color:#f66f6a; color:white;width: 65px; height: 39px;border:0;font-size: 16px; box-sizing: content-box;border-radius: 5px;">
         <a href="/carts/order_info?cart_ids=<%= @cart.line_items.pluck("id").join("||") rescue ""%>">Pay</a>
       </button>
-      
+
     </td>
   </tr>
 </table>
-
-
-
