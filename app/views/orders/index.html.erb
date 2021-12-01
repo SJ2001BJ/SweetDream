@@ -16,11 +16,11 @@
 
 				<hr>
 				<div class="list">
-					<ul style="text-align: left;list-style:none;margin: 0;padding: 0;display: inline;font-size: 16px;">
+					<ul class="orderform">
 						<% @orders.each do |order| %>
 							<h3>product lists(<%= order.created_at %>)</h3>
 							<% order.order_items.each do |item| %>
-								<li style="margin: 0;padding: 0;height: 40px;">Title:<label class="product_title"><%= item.title %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<li class="orderTitle" >Title:<label class="product_title"><%= item.title %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									Count:<label class="product_title"><%= item.count %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									Price:<label class="product_title"><%= number_to_currency(item.price) %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								</li>
