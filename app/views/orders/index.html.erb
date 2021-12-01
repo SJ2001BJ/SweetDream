@@ -20,14 +20,16 @@
 						<% @orders.each do |order| %>
 							<h3>product lists(<%= order.created_at %>)</h3>
 							<% order.order_items.each do |item| %>
+							<!-- get item.title item.count item.price -->
 								<li class="orderTitle" >Title:<label class="product_title"><%= item.title %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									Count:<label class="product_title"><%= item.count %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									Price:<label class="product_title"><%= number_to_currency(item.price) %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								</li>
 							<% end %>
 							<div>
+								<!--create order , give a index, use migration, find order.name,phone,address-->
 								<h3>delivered information</h3>
-								<li style="margin: 0;padding: 0;height: 40px;">Name:<label class="product_title"><%= order.name %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<li class="del_info">Name:<label class="product_title"><%= order.name %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										Phone:<label class="product_title"><%= order.phone %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										Address:<label class="product_title"><%= order.address %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								</li>

@@ -6,7 +6,7 @@
   <table style="font-weight:bold; ">
     <% if !@cart.nil? %>
       <% @cart.line_items.each do |item|%>
-       <tr style="border-bottom:1px solid #BBB;height: 30px;">
+       <tr class="cartsline">
          <td>&nbsp;<%= item.quantity %> &times;</td>
          <td><%= item.product.title %></td>
           <td class='item_price'><%= number_to_currency(item.total_price) %> </td>

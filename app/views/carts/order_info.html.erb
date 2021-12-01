@@ -10,7 +10,7 @@
 		<hr>
 		<div class="list">
 			<% total_price = 0 %>
-			<ul style="text-align: left;list-style:none;margin: 0;padding: 0;display: inline;font-size: 16px;">
+			<ul class="order_ac">
 				<% @items.each do |item| %>
 					<li style="margin: 0;padding: 0;height: 40px;">Title:<label class="product_title"><%= item.product.title %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						Count:<label class="product_title"><%= item.quantity %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
