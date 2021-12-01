@@ -6,9 +6,7 @@
     <link rel="contact" href="http://localhost:3000/contact">
 
   </head>
-  <body>
-    <h1 class="title"> <%= t('.title') %> </h1>
-
+  <body >
     <div class="form">
       <%= form_tag request_contact_path, method: 'post' do %>
          <%= label_tag :name, t('.name') %>
@@ -26,13 +24,38 @@
          <%= submit_tag t('.submit') %>
         <% end %>
     </div>
-  </body>
-  <div class="jumbotron" style="background-color:#df5b6e" >
-    <div class="container text-center" >
-      <img src="assets/action-image.jpg" alt="">
-      <h1 >Sweet Dream</h1>
 
+    <div class="container-fluid" style="background-color:#df5b6e">
+      <div class="row">
+        <div class="col-sm-8">
+          <h2>About SweetDream</h2>
+          <p>We are committed to bringing sweet food to the world..</p>
+          <button class="btn btn-default btn-lg" href="http://localhost:3000">Get in Touch</button>
+        </div>
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-signal logo"></span>
+        </div>
+      </div>
     </div>
-  </div>
+
+    <div class="container-fluid bg-grey" style="background-color:#ece6ed">
+      <div class="row">
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-globe logo"></span>
+        </div>
+        <div class="col-sm-8">
+          <h2>Our Values</h2>
+          <h4><strong>MISSION:</strong> TRY OUR BEST..</h4>
+          <p><strong>VISION:</strong> MAKE EVERTHING PERFECT.</p>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </body>
+
 
 </html>
