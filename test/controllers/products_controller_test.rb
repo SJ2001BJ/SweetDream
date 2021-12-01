@@ -23,7 +23,7 @@ end
   test "should get new" do
 
     get new_product_url
-    assert_response :success
+    assert_response :redirect
   end
 
 
