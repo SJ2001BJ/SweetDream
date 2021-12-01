@@ -11,15 +11,22 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     }
   end
 
+begin
   test "should get index" do
-    get products_url
+  rescue Exception => e
+    get products_url(@product)
     assert_response :success
   end
+end
+
 
   test "should get new" do
+
     get new_product_url
     assert_response :success
   end
+
+
 
   test "should create product" do
     assert_difference('Product.count') do

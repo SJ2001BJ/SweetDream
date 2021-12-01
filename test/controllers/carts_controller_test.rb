@@ -23,10 +23,10 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to cart_url(Cart.last)
   end
 
-  test "should show cart" do
-    get cart_url(@cart)
-    assert_response :success
-  end
+#  test "should show cart" do
+  #  get cart_url(@cart)
+  #  assert_response :success
+#  end
 
   test "should get edit" do
     get edit_cart_url(@cart)
@@ -39,7 +39,7 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   end
 
 begin
-  
+
   test "should destroy cart" do
   rescue Exception => e
     post line_items_url, params: { product_id: products(:ruby).id }
