@@ -37,6 +37,22 @@ en:
       link_to: Show
       link_to: Back
 
+    new:
+      link_to: Back
+
+  devise:
+    sessions:
+      new:
+        email: email
+        password: password
+        remember_me: remember_me
+
+    shared:
+      _error_messages:
+        log in: log in
+        Sign up: Sign up
+        
+
 
 
   store:
