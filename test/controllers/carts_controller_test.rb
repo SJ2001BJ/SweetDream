@@ -39,6 +39,7 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   end
 
 begin
+  
   test "should destroy cart" do
   rescue Exception => e
     post line_items_url, params: { product_id: products(:ruby).id }
