@@ -6,7 +6,8 @@
        <td>&nbsp;<%= item.quantity %> &times;</td>
        <td><%= item.product.title %></td>
         <td class='item_price'><%= number_to_currency(item.total_price) %> </td>
-        <td style="padding-left: 15px;color:red"><a href="http://localhost:3000/carts/delete_one_pro?item_id=<%= item.id %>&cart_id=<%=item.cart_id%>">delete</a></td>
+        <td class="deletepro">
+          <a href="http://localhost:3000/carts/delete_one_pro?item_id=<%= item.id %>&cart_id=<%=item.cart_id%>">delete</a></td>
      </tr>
     <% end %>
 
@@ -16,17 +17,41 @@
     <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
   </tr>
   <tr>
-    <td>
-      <%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' },style:"float:left;background-color:grey; color:white;width: 95px; height: 39px;border:0;font-size: 16px; box-sizing: content-box;border-radius: 5px;" %>
+    <td class="empty">
+      <%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
     </td>
     <td>
-      <button style="float:right;background-color:#f66f6a; color:white;width: 65px; height: 39px;border:0;font-size: 16px; box-sizing: content-box;border-radius: 5px;">
+      <button class="bottomPay">
         <a href="/carts/order_info?cart_ids=<%= @cart.line_items.pluck("id").join("||") %>">Pay</a>
       </button>
-      
+
     </td>
   </tr>
 </table>
 
+<div class="container-fluid text-center bg-grey">
+  <h4>In the future</h4>
+  <div class="row text-center" style="background-color: #dedae0">
+    <div class="col-sm-4" >
+      <div class="thumbnail" style="background-color: #e3c1f7">
+        <img src="assets/lollipop.webp" alt="" width="400" height="300">
+        <p><strong>lollipop</strong></p>
 
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail" style="background-color: #e3c1f7">
+        <img src="assets/DIY.jpg" alt="" width="400" height="300">
+        <p><strong>DIY Candy</strong></p>
 
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail" style="background-color: #e3c1f7">
+        <img src="assets/milkshake1.jpg" alt="" width="400" height="300">
+        <p><strong>Milk shake</strong></p>
+
+      </div>
+    </div>
+  </div>
+</div>
