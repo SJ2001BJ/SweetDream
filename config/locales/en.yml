@@ -31,30 +31,14 @@
 
 en:
   app_title: SweetDream
-  app_description: A store that you can pick your favourite sweets 
-
-  carts:
-    edit:
-      link_to: Show
-      link_to: Back
-
-    new:
-      link_to: Back
+  app_description: A store that you can pick your favourite sweets
 
   devise:
     sessions:
       new:
-        email: email
-        password: password
-        remember_me: remember_me
-
-    shared:
-      _error_messages:
-        log in: log in
-        Sign up: Sign up
-
-
-
+       email: emial
+       password: password
+       submit: "login"
 
   store:
     contact:

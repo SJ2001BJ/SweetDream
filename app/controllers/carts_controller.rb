@@ -55,10 +55,10 @@ class CartsController < ApplicationController
       redirect_to "/carts/#{params[:cart_id]}"
     end
   end
-  def order_info
-    lineids = params[:cart_ids].split("||")
-    @items = LineItem.where(id:lineids)
-  end
+    def order_info
+      lineids = params[:cart_ids].split("||")
+      @items = LineItem.where(id:lineids)
+    end
 
   # DELETE /carts/1 or /carts/1.json
   def destroy

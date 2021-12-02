@@ -20,7 +20,7 @@
            <td><%= item.product.title %></td>
             <td class='item_price'><%= number_to_currency(item.total_price) %> </td>
             <td class="deletepro">
-              <a href="carts/delete_one_pro?item_id=<%= item.id %>&cart_id=<%=item.cart_id%>">delete</a>
+              <a href="carts/delete_one_pro?item_id=<%= item.id %>&cart_id=<%=item.cart_id%>">delete</a><!--give a link for delete, so i need to find what that i need to delete, so the index of item will be the ID,then make sure the id not only are item ,but also are in cart.-->
             </td>
          </tr>
         <% end %>
@@ -35,14 +35,16 @@
       </tr>
       <tr>
         <td class="empty">
-          <%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <!--<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %> -->
         </td>
+
         <td>
           <button class="bottomPay">
+            <!--it can be seen that PLUCK method select the "id" of each piece of data in the line_items table as the array. join table query ,  rescue ""-->
             <a href="/carts/order_info?cart_ids=<%= @cart.line_items.pluck("id").join("||") rescue ""%>">Pay</a>
           </button>
+       </td>
 
-        </td>
       </tr>
     </table>
     </form>

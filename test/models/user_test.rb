@@ -16,6 +16,7 @@ class UserTest < ActiveSupport::TestCase
   test " normal users attributes is saved" do
      user = User.new
      user.email = 'js02575@surrey.ac.uk'
+     user.password = 'daf313'
      user.admin = 'true'
 
      user.save
@@ -25,12 +26,14 @@ class UserTest < ActiveSupport::TestCase
   test " admin users attributes is saved" do
      user = User.new
      user.email = '1773780642@126.com'
-     user.password = 111111
+     user.password = '111111'
      user.admin = 'true'
 
      user.save
      assert user.valid?
   end
+
+
 
 
 

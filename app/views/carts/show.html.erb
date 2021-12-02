@@ -1,54 +1,72 @@
 <p id="notice"><%= notice %></p>
-<h2> Your Candy Cart</h2>
-<table style="font-weight:bold;">
-  <% @cart.line_items.each do |item|%>
-     <tr style="border-bottom:1px solid #BBB;height: 30px;">
-       <td>&nbsp;<%= item.quantity %> &times;</td>
-       <td><%= item.product.title %></td>
-        <td class='item_price'><%= number_to_currency(item.total_price) %> </td>
-        <td class="deletepro">
-          <a href="http://localhost:3000/carts/delete_one_pro?item_id=<%= item.id %>&cart_id=<%=item.cart_id%>">delete</a></td>
-     </tr>
-    <% end %>
 
 
-  <tr class="total_line" style="height: 30px;">
-    <td colspan="2">Total</td>
-    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-  </tr>
-  <tr>
-    <td class="empty">
-      <%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </td>
-    <td>
-      <button class="bottomPay">
-        <a href="/carts/order_info?cart_ids=<%= @cart.line_items.pluck("id").join("||") %>">Pay</a>
-      </button>
+<center>
+ <div class=" cartB">
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <h2 class="candyt"> Your SweetDream Cart</h2>
+   <br>
+    <form class="checkout" action="index.html" method="post">
+      <p id="notice"><%= notice %></p>
+        <h2> Your Candy Cart</h2>
+        <table style="font-weight:bold;">
+          <% @cart.line_items.each do |item|%>
+             <tr style="border-bottom:1px solid #BBB;height: 30px;">
+               <td>&nbsp;<%= item.quantity %> &times;</td>
+               <td><%= item.product.title %></td>
+                <td class='item_price'><%= number_to_currency(item.total_price) %> </td>
+                <td> <a href="http://localhost:3000/carts/delete_one_pro?item_id=<%= item.id %>&cart_id=<%=item.cart_id%>">delete</a></td>
+             </tr>
+            <% end %>
 
-    </td>
-  </tr>
-</table>
 
+          <tr class="total_line" style="height: 30px;">
+            <td colspan="2">Total</td>
+            <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+          </tr>
+          <tr>
+            <td>
+              <!--<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>-->
+
+            </td>
+            <td>
+              <button class="bottomPay">
+                <a href="/carts/order_info?cart_ids=<%= @cart.line_items.pluck("id").join("||") %>">Pay</a>
+              </button>
+
+            </td>
+          </tr>
+        </table>
+
+    </form>
+  </div>
+
+</center>
 <div class="container-fluid text-center bg-grey">
   <h4>In the future</h4>
   <div class="row text-center" style="background-color: #dedae0">
     <div class="col-sm-4" >
       <div class="thumbnail" style="background-color: #e3c1f7">
-        <img src="assets/lollipop.webp" alt="" width="400" height="300">
-        <p><strong>lollipop</strong></p>
+        <img src="https://m.media-amazon.com/images/I/A1XKmDClZ2L._AC_SL1500_.jpg " alt="" width="400" height="260">
+        <p><strong>DIY</strong></p>
 
       </div>
     </div>
     <div class="col-sm-4">
       <div class="thumbnail" style="background-color: #e3c1f7">
-        <img src="assets/DIY.jpg" alt="" width="400" height="300">
-        <p><strong>DIY Candy</strong></p>
+        <img src="https://m.media-amazon.com/images/I/911npTo8s6S._AC_SL1500_.jpg" alt="" width="300" height="200">
+        <p><strong>lolipop</strong></p>
 
       </div>
     </div>
     <div class="col-sm-4">
       <div class="thumbnail" style="background-color: #e3c1f7">
-        <img src="assets/milkshake1.jpg" alt="" width="400" height="300">
+        <img src="https://m.media-amazon.com/images/I/81MDEg3YWsL._AC_SL1500_.jpg" alt="" width="400" height="300">
         <p><strong>Milk shake</strong></p>
 
       </div>
