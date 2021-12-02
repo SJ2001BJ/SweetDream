@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-users = User.create([{admin: '1773780642@126.com'}, {password: '111111'}])
+users = User.create([{email: '1773780642@126.com',password: '123shi'},{email: '1773780642@126.com',password: '123shi', admin:true`}])
 
 Product.create(name: 'Lemon Drizzle Loaf Cake, 500g Roll over image', description: 'A classic lemon drizzle cake, With a light lemon icing, Suitable for vegetarians Contains almonds', image_url: 'assets/images/lemoncake.jpg', price: 7.90, selection: 'cakes' )
 Product.create(name: 'Roll over image to zoom in Sukrin Chocolate Cake Mix 410g', description: 'Calorie Reduced,Low Carbohydrates, High Fibre, High Protein No Added Sugar', image_url: 'assets/images/chocolatecake.jpg', price: 6.99, selection: 'cakes')
