@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
 	def new_order
 		if Order.new(name: params[:name], phone: params[:phone], address: params[:address], user_id: current_user.id).save
 			order_id = Order.where(user_id: current_user.id).last.id
+			#print items separately
 			items = params[:item_ids].split("||")
 			items = LineItem.where(id:items)
 			items.each do |item|

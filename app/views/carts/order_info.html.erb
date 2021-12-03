@@ -19,28 +19,38 @@
 						Price:<label class="product_title"><%= number_to_currency(price) %></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					</li>
 				<% end %>
-				<li>tital price: <label class="product_title"><%= number_to_currency(total_price) %></label></li>
+				<li>total price: <label class="product_title"><%= number_to_currency(total_price) %></label></li>
 			</ul>
 		</div>
 	</div>
 	<hr>
 
 	<div class="delivered">
-		<h2>delivered information</h2>
+		<h2>Sweets  delivered information  </h2>
 			<hr>
 			<form action="/orders/new_order" method="post">
 				<input type="text" hidden name="item_ids" value="<%= params[:cart_ids] %>">
+				<div class="">
+
+				</div>
+				<br>
 				<div class="contact1">
 					<label>name:</label>
 					<input type="text" name="name" class="contact_input">
 				</div>
+				<br>
 				<div class="contact">
 					<label>phone:</label>
 					<input type="text" name="phone" class="contact_input">
 				</div>
+				<br>
 				<div class="contact">
 					<label>address:</label>
 					<input type="text" name="address" class="contact_input">
+				</div>
+				<br>
+				<div class="picture">
+					<img src="https://media.istockphoto.com/photos/closeup-portrait-of-funny-ginger-cat-wearing-sunglasses-isolated-on-picture-id1253696116?k=20&m=1253696116&s=170667a&w=0&h=Cm_OrKx4P_IN3dfzKbpaLUs5yW8B3zZaFYJNNFrHhLA=" alt="">
 				</div>
 
 				<br><br><br><br><br><br><br><br>
