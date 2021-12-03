@@ -41,7 +41,7 @@
         <td>
           <button class="bottomPay">
             <!--it can be seen that PLUCK method select the "id" of each piece of data in the line_items table as the array. join table query ,  rescue ""-->
-            <a href="/carts/order_info?cart_ids=<%= @cart.line_items.pluck("id").join("||") rescue ""%>">Pay</a>
+            <a href="/carts/order_info?cart_ids=<%= @cart.line_items.pluck("id").join("||") %>">Pay</a>
           </button>
        </td>
 

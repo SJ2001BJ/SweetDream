@@ -2,8 +2,7 @@ class CartsController < ApplicationController
   before_action :set_cart, only: %i[index show edit update destroy ]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   # GET /carts or /carts.json
-  def index
-    Rails.logger.info "-index----#{session[:cart_id]}------#{current_user.id}"
+  def index   
     @cart = Cart.find(session[:cart_id])
   end
 
@@ -22,10 +21,10 @@ class CartsController < ApplicationController
 
   # POST /carts or /carts.json
   def create
-    Rails.logger.info "-------create"
+
     @cart = Cart.new(cart_params)
     @cart.user_id = current_user.id
-    Rails.logger.info "-------#{@cart.to_json}"
+
     respond_to do |format|
       if @cart.save
         format.html { redirect_to @cart, notice: "Cart was successfully created." }
@@ -50,7 +49,7 @@ class CartsController < ApplicationController
     end
   end
   def delete_one_pro
-    Rails.logger.info "-----------#{params[:cart_id]}"
+
     if LineItem.find(params[:item_id]).delete
       redirect_to "/carts/#{params[:cart_id]}"
     end
@@ -74,10 +73,8 @@ class CartsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
       begin
-        Rails.logger.info "------begin---#{current_user.id}"
         @cart = Cart.find(session[:cart_id])
       rescue ActiveRecord::RecordNotFound
-        Rails.logger.info "------rescue"
         @cart = Cart.create
         @cart.user_id = current_user.id
         session[:cart_id] = @cart.id
@@ -85,8 +82,6 @@ class CartsController < ApplicationController
     end
 
     def invalid_cart
-      Rails.logger.info "-index2----#{session[:cart_id]}------#{current_user.id}"
-      logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to store_index_url, notice: 'Invalid Cart'
     end
     # Only allow a list of trusted parameters through.

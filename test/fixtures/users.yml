@@ -15,3 +15,8 @@ regular_user:
   #password: MyString
   admin: false
 # column: value
+
+rathod:
+  email: js02575@surrey.ac.uk
+
+  admin: false

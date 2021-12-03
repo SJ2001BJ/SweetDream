@@ -6,6 +6,7 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
+    sign_in users(:rathod)
     get carts_url
     assert_response :success
   end

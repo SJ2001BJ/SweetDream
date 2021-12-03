@@ -1,7 +1,6 @@
 class StoreController < ApplicationController
   def index
     @products = Product.order(:title)
-    Rails.logger.info "--#{current_user.id}-#{current_user.email}"
   end
 
   def contact
