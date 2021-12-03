@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @product = products(:one)
     @update = {
@@ -9,6 +10,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       image_url:   'https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__340.jpg',
       price: 20.05
     }
+    user = User.create!(email: 'js02575@surrey.ac.uk', password: '123shi',admin: true)
+    user.save
+    sign_in user
   end
 
 begin
@@ -23,7 +27,7 @@ end
   test "should get new" do
 
     get new_product_url
-    assert_response :redirect
+    assert_response :success
   end
 
 

@@ -4,19 +4,14 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-admin_user:
-  email: 1773780642@126.com
-  #password: 111111
-  admin: true
+#admin_user:
+#  email: 1773780642@126.com
+
+  #admin: true
 # column: value
 #
-regular_user:
-  email: normal@gmail.com
+#regular_user:
+#  email: normal@gmail.com
   #password: MyString
-  admin: false
+#  admin: false
 # column: value
-
-rathod:
-  email: js02575@surrey.ac.uk
-
-  admin: false
