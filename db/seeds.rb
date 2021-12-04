@@ -5,10 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-users = User.create([{email: 'js02575@surrey.ac.uk', password: '123shi'}, { email: '1773780642@126.com', password: '111111', admin:true }])
+users = User.create([{email: 'js02575@surrey.ac.uk', password: '123shi'}, { email: '1773780642@126.com', password: '111111', admin:true}])
 
 Product.create(title: 'Lemon Drizzle Loaf Cake, 500g Roll over image', description: 'A classic lemon drizzle cake, With a light lemon icing, Suitable for vegetarians Contains almonds', image_url: 'lemoncake.jpg', price: 7.90, selection: 'cakes' )
-Product.create(title: 'Roll over image to zoom in Sukrin Chocolate Cake Mix 410g', description: 'Calorie Reduced,Low Carbohydrates, High Fibre, High Protein No Added Sugar', image_url: 'chocolatecake.jpg', price: 6.99, selection: 'cakes')
 Product.create(title: 'Milka Cake and Choc Biscuit Cake 175 g', description: 'Soft Sponge Cakes with Alpine Milk Chocolate Pieces and with a Filling with Chocolate', image_url: 'choccake.jpg', price: 1.00, selection: 'cakes')
 
 Product.create(title: 'Double chocolate Candy, Sharing Bag, Sweets Gift, 1 kg', description: 'Made with roasted peanuts and real milk chocolate all wrapped in a thin crispy colourful shell', image_url: 'mmchocolate.jpg', price: 6.00, selection: 'chocolates')
